@@ -12,11 +12,11 @@
   <tr>
     <td><%= post.name %></td>
     <td><%= post.title %></td>
-    <td><%= post.content %></td>
+    <td><%= truncate post.content, :lenght => 20 %></td>
     <td> 
-      <a href="<%= url_for post %>"><i class="icon-eye-open"></i></a>
-      <a href="<%= url_for edit_post_path(post) %>"><i class="icon-edit"></i></a>
-      <a href="<%= url_for post %>" data-confirm="Are you sure?" data-method="delete" rel="nofollow"><i class="icon-trash"></i></a>
+      <a href="<%= url_for post %>" class="btn"><i class="icon-eye-open"></i></a>
+      <a href="<%= url_for edit_post_path(post) %>" class="btn btn-success"><i class="icon-edit"></i></a>
+      <a href="<%= url_for post %>" class="btn btn-danger" data-confirm="Are you sure?" data-method="delete" rel="nofollow"><i class="icon-trash"></i></a>
     </td>
   </tr>
 <% end %>
