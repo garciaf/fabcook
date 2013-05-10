@@ -21,7 +21,9 @@
   </tr>
 <% end %>
 </table>
-
+<div class="digg_pagination">
+  <%= will_paginate @posts %>
+</div>
 <br />
 
 <%= link_to 'New Post', new_post_path %>

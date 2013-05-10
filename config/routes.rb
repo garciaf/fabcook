@@ -1,7 +1,9 @@
 Fabcook::Application.routes.draw do
   
-  resources :posts do
-    resources :comments
+  scope "/admin" do
+    resources :posts do
+      resources :comments
+    end
   end
 
   get "home/index"

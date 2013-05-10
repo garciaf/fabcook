@@ -7,7 +7,7 @@
 
 <%= @post.name %>
 <div class="row">
-  <%= join_tags(@post) %>
+  <%= render @post.tags %>
 </div>
 <div class="row">
 <h2>Comments</h2>

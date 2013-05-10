@@ -23,7 +23,7 @@ group :assets do
 end
 gem 'redcarpet'	
 gem 'jquery-rails'
-
+gem 'will_paginate', '~> 3.0.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -31,10 +31,15 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+# gem for dev
+group :development do
+  gem 'rails-erd'
+end
