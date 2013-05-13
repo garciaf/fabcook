@@ -1,5 +1,9 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <div class="">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="">
     <%= f.label :commenter %><br />
     <%= f.text_field :commenter %>
   </div>

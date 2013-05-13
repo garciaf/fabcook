@@ -8,7 +8,9 @@ Fabcook::Application.routes.draw do
     end
   end
 
-  get "home/index"
+  # match 'tags' =>'tags#index'
+
+  resources :home, :tags
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

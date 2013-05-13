@@ -39,6 +39,9 @@ gem 'devise'
 # Deploy with Capistrano
 gem 'capistrano'
 
+# To handle Tag
+gem 'acts-as-taggable-on'
+
 # To use debugger
 # gem 'debugger'
 

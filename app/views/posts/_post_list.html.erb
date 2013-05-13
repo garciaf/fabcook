@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+  <div class="span4">
+    <h1><%= post.title %> </h1>
+    <p> <%= raw markdown(truncate post.content, :lenght => 40) %></p>
+    <%= render :partial => 'tags/tag', :collection => post.tags %>
+    <p><a class="btn" href="<%= url_for home_path(post) %>">Read more</a></p>
+  </div>
+
+<% end %>
