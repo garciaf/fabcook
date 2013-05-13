@@ -33,6 +33,9 @@ gem 'will_paginate', '~> 3.0.0'
 # Use unicorn as the app server
 gem 'unicorn'
 
+# To authenticate user
+gem 'devise'
+
 # Deploy with Capistrano
 gem 'capistrano'
 

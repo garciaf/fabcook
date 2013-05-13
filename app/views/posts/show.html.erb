@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div class="row">
 
+<div class="span12">
+<div class="row">
 <h1><%= @post.title %></h1>
 <p><%= raw markdown(@post.content) %></p>
 </div>
@@ -15,7 +16,7 @@
 
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
-
+</div>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 </div>
