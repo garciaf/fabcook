@@ -1,10 +1,13 @@
 Fabcook::Application.routes.draw do
   
+
+
   devise_for :users
 
   scope "/admin" do
     resources :posts do
       resources :comments
+      resources :photos
     end
   end
 

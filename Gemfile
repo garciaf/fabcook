@@ -42,6 +42,10 @@ gem 'capistrano'
 # To handle Tag
 gem 'acts-as-taggable-on'
 
+# To handle image upload
+gem "rmagick"
+gem "carrierwave"
+
 # To use debugger
 # gem 'debugger'
 

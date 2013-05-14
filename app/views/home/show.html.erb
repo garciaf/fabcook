@@ -14,6 +14,11 @@
   <%= render :partial => 'tags/tag', :collection => @post.tags %>
 </div>
 <div class="row">
+  <ul class="media-list">
+  <%= render :partial => 'photos/photo', :collection => @post.photos %>
+  </ul>
+</div>
+<div class="row">
 <h3>Comments</h3>
 <ul class="media-list">
 <%= render @post.comments %>

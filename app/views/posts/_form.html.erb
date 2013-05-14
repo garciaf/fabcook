@@ -29,7 +29,14 @@
     <div id="recommended_tags"></div>
     <%= post_form.text_field :tag_list %>
   </div>
-  <div class="actions">
+    <div class="actions">
     <%= post_form.submit %>
-  </div>
 <% end %>
+</div>
+  <div class="row">
+    <%= render :partial => 'photos/photo', :collection => @post.photos %>
+  </div>
+  <h3>Add a Picture:</h3>
+  <%= render "photos/form" %>
+  </div>
+

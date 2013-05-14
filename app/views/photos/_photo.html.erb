@@ -1,0 +1,15 @@
+<li class="media">
+  <a class="pull-left" href="<%= photo.image_url.to_s %>">
+    <%= image_tag photo.image_url(:thumb).to_s %>
+  </a>
+  <div class="media-body">
+    <p>Commentire sure la photo</p>  
+    <p>
+    <% if user_signed_in? %>
+    <%= link_to 'Destroy photo', [photo.post, photo],
+                 :confirm => 'Are you sure?',
+                 :method => :delete,
+                 :class => 'btn btn-mini btn-danger' %>
+    <% end %> 
+  </div>
+</li>
