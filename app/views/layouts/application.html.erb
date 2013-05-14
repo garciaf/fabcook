@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-top">
+  <div class="navbar navbar-fixed-top navbar-wrapper">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -37,13 +37,9 @@
       </div>
     </div>
   </div>
-<div class="container">
-	<div class="row">
 		<%= yield %>
-	</div>
-</div>
 <footer class="footer">
- <%= render(:partial => 'tags/cloud', :locals => {:tags => tags_cloud}) %>
+
 </footer>
 
 </body>

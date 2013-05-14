@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= post_form.label :content %><br />
-    <%= post_form.text_area :content %>
+    <%= post_form.text_area :content, :class => "large-input", :cols => 100 %>
   </div>
   <h2>Tags</h2>
   <div class="l-field">
@@ -34,7 +34,9 @@
 <% end %>
 </div>
   <div class="row">
+    <ul class="media-list">
     <%= render :partial => 'photos/photo', :collection => @post.photos %>
+    </ul>
   </div>
   <h3>Add a Picture:</h3>
   <%= render "photos/form" %>

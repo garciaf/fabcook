@@ -1,15 +1,27 @@
 <li class="media">
   <a class="pull-left" href="<%= photo.image_url.to_s %>">
-    <%= image_tag photo.image_url(:thumb).to_s %>
+    <%= image_tag photo.image_url(:thumb).to_s, :class => "img-polaroid" %>
   </a>
   <div class="media-body">
-    <p>Commentire sure la photo</p>  
-    <p>
+
     <% if user_signed_in? %>
+      <%= form_for([@post, photo]) do |f| %>
+        <%= f.hidden_field :id %>
+        <%= f.hidden_field :post_id %>
+        <div class="field">
+        <%= f.text_area :caption %>
+        </div>
+        <div class="actions">
+        <%= f.submit %>
+      </div>
+      <% end %>
     <%= link_to 'Destroy photo', [photo.post, photo],
                  :confirm => 'Are you sure?',
                  :method => :delete,
                  :class => 'btn btn-mini btn-danger' %>
-    <% end %> 
+    <% else %>
+        <p><%= raw markdown(photo.caption) %></p>  
+    <% end %>
+
   </div>
 </li>

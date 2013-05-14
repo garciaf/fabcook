@@ -1,6 +1,4 @@
 Fabcook::Application.routes.draw do
-  
-
 
   devise_for :users
 
@@ -11,9 +9,9 @@ Fabcook::Application.routes.draw do
     end
   end
 
-  # match 'tags' =>'tags#index'
-
   resources :home, :tags
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,31 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<div class="span12">
-<div class="row">
-<h1><%= @post.title %></h1>
-<p><%= raw markdown(@post.content) %></p>
+<div class="jumbotron">
+  <h1><%= @post.title %></h1>
 </div>
-<% if user_signed_in? %>
-  <%= link_to 'Edit', edit_post_path(@post), :class => 'btn' %> |
-<% end %>
+<div class="container">
+  <div class="row">
+    <%= raw markdown(@post.content) %>
+    <% if user_signed_in? %>
+    <p>
+      <%= link_to 'Edit', edit_post_path(@post), :class => 'btn' %> |
+    </p>
+    <% end %>
+  </div>
 
-<%= @post.name %>
-<div class="row">
-  <%= render :partial => 'tags/tag', :collection => @post.tags %>
-</div>
-<div class="row">
+  
+
+  <div class="row">
+    <ul class="media-list">
+    <%= render :partial => 'photos/photo', :collection => @post.photos %>
+    </ul>
+  </div>
+  <p>Tags: 
+    <%= render :partial => 'tags/tag', :collection => @post.tags %> 
+    | <i class="icon-user"></i> <%= @post.name %>
+  </p>
+  <div class="row">
+  <h3>Comments</h3>
   <ul class="media-list">
-  <%= render :partial => 'photos/photo', :collection => @post.photos %>
+  <%= render @post.comments %>
   </ul>
-</div>
-<div class="row">
-<h3>Comments</h3>
-<ul class="media-list">
-<%= render @post.comments %>
-</ul>
-<h3>Add a comment:</h3>
-<%= render "comments/form" %>
-</div>
-
+  </div>
+  <div class="row">
+  <h3>Add a comment:</h3>
+  <%= render "comments/form" %>
+  </div>
 </div>
 

@@ -9,6 +9,12 @@ class PhotosController < ApplicationController
     redirect_to edit_post_path(@post)
   end
 
+  def update
+    @post = Post.find(params[:post_id])
+    @photo = Photo.find(params[:id])
+    @photo.update_attribute("caption", params[:photo][:caption])
+    redirect_to edit_post_path(@post)
+  end
 
   # DELETE /photos/1
   def destroy
