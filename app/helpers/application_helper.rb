@@ -10,5 +10,7 @@ module ApplicationHelper
   end
 
   include ActsAsTaggableOn::TagsHelper
-
+  def tags_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
 end

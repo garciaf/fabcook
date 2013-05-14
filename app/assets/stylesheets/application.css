@@ -28,6 +28,14 @@
   padding: 14px 24px;
 }
 
+footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+
 .css1 { font-size: 1.0em; }
 .css2 { font-size: 1.2em; }
 .css3 { font-size: 1.4em; }

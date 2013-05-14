@@ -42,7 +42,9 @@
 		<%= yield %>
 	</div>
 </div>
-
+<footer class="footer">
+ <%= render(:partial => 'tags/cloud', :locals => {:tags => tags_cloud}) %>
+</footer>
 
 </body>
 </html>
