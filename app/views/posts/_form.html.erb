@@ -1,44 +1,35 @@
-<% @post.tags.build %>
-<%= form_for(@post) do |post_form| %>
-  <% if @post.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
   </div>
-  <% end %>
- 
-  <div class="field">
-    <%= post_form.label :name %><br />
-    <%= post_form.text_field :name %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= post_form.label :title %><br />
-    <%= post_form.text_field :title %>
-  </div>
-  <div class="field">
-    <%= post_form.label :content %><br />
-    <%= post_form.text_area :content, :class => "large-input", :cols => 100 %>
-  </div>
-  <h2>Tags</h2>
-  <div class="l-field">
-    <%= post_form.label :tag_list, 'Tags' %>
-    <div id="recommended_tags"></div>
-    <%= post_form.text_field :tag_list %>
-  </div>
-    <div class="actions">
-    <%= post_form.submit %>
-<% end %>
-</div>
-  <div class="row">
-    <ul class="media-list">
-    <%= render :partial => 'photos/photo', :collection => @post.photos %>
-    </ul>
-  </div>
-  <h3>Add a Picture:</h3>
-  <%= render "photos/form" %>
+  <div class="control-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area' %>
+    </div>
   </div>
 
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+<div class="row">
+  <ul class="media-list">
+  <%= render :partial => 'photos/photo', :collection => @post.photos %>
+  </ul>
+</div>
+<h3>Add a Picture:</h3>
+<%= render "photos/form" %>
+</div>

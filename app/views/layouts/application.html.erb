@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fabcook</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <% if content_for?(:title) %>
+    <title><%= yield(:title) %></title>
+  <% else %>
+    <title>Fabcook</title>
+  <% end %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,17 +18,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="<%= url_for posts_path %>">Fabcook</a>
-        <div class="nav-collapse">
+        <a class="brand" href="<%= url_for root_path %>">Fabcook</a>
+        <div class="nav-collapse collapse navbar-responsive-collapse">
           <ul class="nav">
             <li>
             <%= link_to root_path do %>
               <i class="icon-home icon-2x"></i>
             <%- end %>
             </li>
-            
           </ul>
         </div>
+        <%= render :partial => "home/search" %>
         <ul class="nav pull-right">
         <% if user_signed_in? %>
           <li><%= link_to "admin", posts_path %></li>
@@ -37,10 +40,16 @@
       </div>
     </div>
   </div>
-		<%= yield %>
+  <div class="container">
+  <div class="row">
+      <div class="span9"><%= yield %></div>
+      <div class="span3">
+        <%= yield(:side) %></div>
+    </div>
 <footer class="footer">
 
 </footer>
-
+<%= javascript_include_tag "application" %>
+<%= yield(:javascript) %>
 </body>
 </html>

@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  <%= @post.title %>
+<% end %>
+
 <div class="jumbotron">
   <h1><%= @post.title %></h1>
 </div>
@@ -11,10 +15,8 @@
     <% end %>
   </div>
 
-  
-
   <div class="row">
-    <ul class="media-list">
+    <ul class="media-list gallery">
     <%= render :partial => 'photos/photo', :collection => @post.photos %>
     </ul>
   </div>
@@ -34,3 +36,13 @@
   </div>
 </div>
 
+<% content_for :javascript do %>
+<script type="text/javascript">
+  $('.gallery').magnificPopup({
+    delegate: 'a', // child items selector, by clicking on it popup will open
+    type: 'image',
+    gallery: {enabled:true}
+    // other options
+  });
+</script>
+<% end %>

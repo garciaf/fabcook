@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  scoped_search :on => [:title, :content]
+  
   attr_accessible :content, :name, :title, :tag_list
 
   validates :name,  :presence => true

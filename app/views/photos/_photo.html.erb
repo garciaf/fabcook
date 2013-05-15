@@ -1,5 +1,5 @@
 <li class="media">
-  <a class="pull-left" href="<%= photo.image_url.to_s %>">
+  <a class="pull-left" href="<%= photo.image_url.to_s %>" title="<%= raw markdown(photo.caption) %>">
     <%= image_tag photo.image_url(:thumb).to_s, :class => "img-polaroid" %>
   </a>
   <div class="media-body">
