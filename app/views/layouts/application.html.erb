@@ -41,6 +41,10 @@
     </div>
   </div>
   <div class="container">
+    <ul class="breadcrumb">
+      <%= yield(:breadcrumb) %>
+    </ul>
+
   <div class="row">
       <div class="span9"><%= yield %></div>
       <div class="span3">

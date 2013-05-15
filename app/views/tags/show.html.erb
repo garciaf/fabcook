@@ -1,9 +1,13 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", root_path %><span class="divider">/</span></li>
+  <li><%= link_to  "Tags", tags_path %><span class="divider">/</span></li>
+  <li class="active"><%=  @tag %></li>
+<% end %>
 <div class="jumbotron">
     <h1>Article about <%= @tag %></h1>
     <p class="lead">Let see ...</p>
 </div>
 <hr>
-<div class="container">
 <div class="row-fluid">
 <%= render :partial => 'posts/post_list' %>  
   <div class="digg_pagination">

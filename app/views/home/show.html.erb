@@ -1,3 +1,7 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", root_path %><span class="divider">/</span></li>
+  <li class="acive"><%= @post.title %></li>
+<% end %>
 <% content_for :title do %>
   <%= @post.title %>
 <% end %>
