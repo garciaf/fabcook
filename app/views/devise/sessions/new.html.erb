@@ -1,5 +1,8 @@
-<div class="container">
-  <div class="span6">
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", root_path %><span class="divider">/</span></li>
+  <li class="active">Sign in</li>
+  <li class="active"><%=  @tag %></li>
+<% end %>
 <h2>Sign in</h2>
 
 <%= form_for(resource, :html => { :class => "form-horizontal" }, :as => resource_name, :url => session_path(resource_name)) do |f| %>

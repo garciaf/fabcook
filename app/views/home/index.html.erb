@@ -6,11 +6,9 @@
     <p class="lead">Even me ...</p>
 </div>
 <hr>
-<div class="container">
 <div class="row-fluid">
   <%= render :partial => 'posts/post_list' %>  
   <div class="digg_pagination">
     <%= will_paginate @posts %>
   </div>
-</div>
 </div>
