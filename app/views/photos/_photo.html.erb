@@ -4,7 +4,7 @@
   </a>
   <div class="media-body">
 
-    <% if user_signed_in? %>
+  <% if can? :manage, photo %>
       <%= form_for([@post, photo]) do |f| %>
         <%= f.hidden_field :id %>
         <%= f.hidden_field :post_id %>
@@ -19,9 +19,9 @@
                  :confirm => 'Are you sure?',
                  :method => :delete,
                  :class => 'btn btn-mini btn-danger' %>
-    <% else %>
-        <p><%= raw markdown(photo.caption) %></p>  
-    <% end %>
+  <% else %>
+      <p><%= raw markdown(photo.caption) %></p>  
+  <% end %>
 
   </div>
 </li>

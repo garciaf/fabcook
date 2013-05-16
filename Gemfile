@@ -39,6 +39,8 @@ gem 'unicorn'
 
 # To authenticate user
 gem 'devise'
+# To handle permission
+gem "cancan"
 
 # Deploy with Capistrano
 gem 'capistrano'

@@ -8,7 +8,7 @@
       <%= comment.body %>
     </p>
   <p>
-  <% if user_signed_in? %>
+  <% if can? :destroy, comment %>
   <%= link_to 'Destroy Comment', [comment.post, comment],
                :confirm => 'Are you sure?',
                :method => :delete,

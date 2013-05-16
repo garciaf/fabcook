@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-
+  load_and_authorize_resource
   def index
     @tags = Post.tag_counts_on(:tags)
   end

@@ -11,13 +11,11 @@
 </div>
   <div class="row">
     <%= raw markdown(@post.content) %>
-    <% if user_signed_in? %>
-    <p>
+    <% if can? :update, @post %>
       <%= link_to 'Edit', edit_post_path(@post), :class => 'btn' %> |
-    </p>
     <% end %>
   </div>
-
+  <hr />
   <div class="row">
     <ul class="media-list gallery">
     <%= render :partial => 'photos/photo', :collection => @post.photos %>
@@ -28,6 +26,7 @@
     | <i class="icon-user"></i> <%= @post.name %>
   </p>
   <div class="row">
+  <hr />
   <h3>Comments</h3>
   <ul class="media-list">
   <%= render @post.comments %>
