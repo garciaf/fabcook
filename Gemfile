@@ -52,6 +52,9 @@ gem 'acts-as-taggable-on'
 gem "rmagick"
 gem "carrierwave"
 
+# For I18n
+gem 'globalize3'
+ 
 # To use debugger
 # gem 'debugger'
 

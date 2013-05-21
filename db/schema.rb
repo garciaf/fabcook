@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516152752) do
+ActiveRecord::Schema.define(:version => 20130521131445) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20130516152752) do
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
+  create_table "photo_translations", :force => true do |t|
+    t.integer  "photo_id"
+    t.string   "locale"
+    t.text     "caption"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "photo_translations", ["locale"], :name => "index_photo_translations_on_locale"
+  add_index "photo_translations", ["photo_id"], :name => "index_photo_translations_on_photo_id"
+
   create_table "photos", :force => true do |t|
     t.string   "image"
     t.string   "remote_image_url"
@@ -34,6 +45,18 @@ ActiveRecord::Schema.define(:version => 20130516152752) do
   end
 
   add_index "photos", ["post_id"], :name => "index_photos_on_post_id"
+
+  create_table "post_translations", :force => true do |t|
+    t.integer  "post_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "post_translations", ["locale"], :name => "index_post_translations_on_locale"
+  add_index "post_translations", ["post_id"], :name => "index_post_translations_on_post_id"
 
   create_table "posts", :force => true do |t|
     t.string   "name"
