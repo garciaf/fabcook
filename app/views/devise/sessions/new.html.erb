@@ -1,9 +1,8 @@
 <% content_for :breadcrumb do %>
   <li><%= link_to "Home", root_path %><span class="divider">/</span></li>
-  <li class="active">Sign in</li>
-  <li class="active"><%=  @tag %></li>
+  <li class="active"><%=t 'devise.sessions.new' %></li>
 <% end %>
-<h2>Sign in</h2>
+<h2><%=t 'devise.sessions.new' %></h2>
 
 <%= form_for(resource, :html => { :class => "form-horizontal" }, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div class="control-group">
