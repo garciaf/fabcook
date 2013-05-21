@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class BlogController < ApplicationController
   before_filter :find_post, :only => [:show]
   
   def index

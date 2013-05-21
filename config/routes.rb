@@ -8,10 +8,10 @@ Fabcook::Application.routes.draw do
         resources :photos
       end
     end
-    resources :home, :tags
+    resources :blog, :tags
   end
-  match '/:locale' => 'home#index'
-  root :to => 'home#index'
+  match '/:locale' => 'blog#index'
+  root :to => 'blog#index'
 
   # match '/:locale' => 'home#index'
 
