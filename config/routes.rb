@@ -1,16 +1,19 @@
 Fabcook::Application.routes.draw do
 
   devise_for :users
-
-  scope "/admin" do
-    resources :posts do
-      resources :comments
-      resources :photos
+  scope "(:locale)", :locale => /en|fr/ do
+    scope "/admin" do
+      resources :posts do
+        resources :comments
+        resources :photos
+      end
     end
+    resources :home, :tags
   end
+  match '/:locale' => 'home#index'
+  root :to => 'home#index'
 
-  resources :home, :tags
-
+  # match '/:locale' => 'home#index'
 
 
   # The priority is based upon order of creation:
@@ -62,7 +65,6 @@ Fabcook::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
