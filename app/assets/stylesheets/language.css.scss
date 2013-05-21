@@ -1,0 +1,15 @@
+@import "compass";
+@import "compass/utilities/sprites";
+@import "my-icons/*.png";
+@include all-my-icons-sprites;
+
+[class^="my-icons-"], 
+[class*=" my-icons-"] { 
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 1px;
+  margin-right: 2px;
+}
+

@@ -10,7 +10,7 @@ Fabcook::Application.routes.draw do
     end
     resources :blog, :tags
   end
-  match '/:locale' => 'blog#index'
+  get '/:locale' => 'blog#index',  :as => "home"
   root :to => 'blog#index'
 
   # match '/:locale' => 'home#index'
