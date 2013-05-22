@@ -55,11 +55,12 @@
     </div>
   </div>
   <div class="container">
-      <% if content_for?(:breadcrumb) %>
-          <ul class="breadcrumb">
-            <%= yield(:breadcrumb) %>
-          </ul>
-      <% end %>
+    <%= render :partial => 'layouts/notification' %>
+    <% if content_for?(:breadcrumb) %>
+        <ul class="breadcrumb">
+          <%= yield(:breadcrumb) %>
+        </ul>
+    <% end %>
 
   <div class="row">
       <div class="span9"><%= yield %></div>
