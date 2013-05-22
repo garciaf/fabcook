@@ -59,6 +59,18 @@ gem 'globalize3'
 # To use debugger
 # gem 'debugger'
 
+group :development, :test do
+  gem "rspec-rails"
+  gem 'launchy'
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+end
+
 # gem for dev
 group :development do
   gem 'rails-erd'
