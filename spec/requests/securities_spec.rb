@@ -18,5 +18,14 @@ describe "Securities" do
       current_path.should eq(root_path)
       page.should have_content("Signed in successfully.")
     end
+    
+    it "should be able able go to new post view when user is logged in " do
+      user = FactoryGirl.create(:user)
+      login user 
+      visit new_post_path
+      current_path.should eq(new_post_path)
+
+    end
+
   end
 end

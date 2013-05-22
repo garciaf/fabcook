@@ -1,7 +1,7 @@
 Fabcook::Application.routes.draw do
 
-  devise_for :users
   scope "(:locale)", :locale => /en|fr/ do
+    devise_for :users
     scope "/admin" do
       resources :posts do
         resources :comments

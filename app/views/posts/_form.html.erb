@@ -24,12 +24,3 @@
                 posts_path, :class => 'btn' %>
   </div>
 <% end %>
-
-<div class="row">
-  <ul class="media-list">
-  <%= render :partial => 'photos/photo', :collection => @post.photos %>
-  </ul>
-</div>
-<h3>Add a Picture:</h3>
-<%= render "photos/form" %>
-</div>

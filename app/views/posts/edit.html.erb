@@ -3,3 +3,12 @@
   <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human %></h1>
 </div>
 <%= render :partial => 'form' %>
+
+<div class="row">
+  <ul class="media-list">
+  <%= render :partial => 'photos/photo', :collection => @post.photos %>
+  </ul>
+</div>
+<h3>Add a Picture:</h3>
+<%= render "photos/form" %>
+</div>
