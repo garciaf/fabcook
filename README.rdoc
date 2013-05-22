@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/garciaf/fabcook.png?branch=master)](https://travis-ci.org/garciaf/fabcook)
+{<img src="https://travis-ci.org/garciaf/fabcook.png?branch=master" alt="Build Status" />}[https://travis-ci.org/garciaf/fabcook]
 
 == Fabcook
 
