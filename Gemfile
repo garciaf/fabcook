@@ -23,7 +23,7 @@ group :assets do
 
 end
 # Markdown support
-gem 'redcarpet'	
+gem 'redcarpet'	, '~> 2.3.0'
 
 gem 'jquery-rails'
 
