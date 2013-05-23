@@ -7,7 +7,9 @@
 </div>
 <hr>
 <div class="row-fluid">
-  <%= render :partial => 'posts/post_list' %>  
+  <%= render :partial => 'posts/post_list' %>
+</div>
+<div class="row-fluid"> 
   <div class="digg_pagination">
     <%= will_paginate @posts %>
   </div>
