@@ -4,3 +4,5 @@
 en:
   title: "Anyone can cook"
   subtitle: "even me ..."
+  search:
+    no_result: "No result sorry"

@@ -24,7 +24,6 @@ describe "Securities" do
       login user 
       visit new_post_path
       current_path.should eq(new_post_path)
-
     end
 
   end

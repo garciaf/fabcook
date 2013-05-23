@@ -1,0 +1,19 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", home_path %><span class="divider">/</span></li>
+  <li class="active">Search : <%= @search %></li>
+<% end %>
+<div class="jumbotron">
+    <h1><%=t :title %></h1>
+    <p class="lead"><%=t :subtitle %></p>
+</div>
+<hr>
+<div class="row-fluid">
+  <% if @posts.empty? %>
+    <%=t "search.no_result"%>
+  <% else %>
+    <%= render :partial => 'posts/post_list' %>  
+    <div class="digg_pagination">
+      <%= will_paginate @posts %>
+    </div>
+  <% end %>
+</div>

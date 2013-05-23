@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   scoped_search :on => [:title, :content]
-  
+  scoped_search :in => :tags, :on => :name
+
   attr_accessible :content, :name, :title, :tag_list
   translates :title, :content
   

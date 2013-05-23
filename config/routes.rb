@@ -9,6 +9,7 @@ Fabcook::Application.routes.draw do
       end
     end
     resources :blog, :tags
+    get '/search' => 'blog#search', :as => "search"
   end
   get '/:locale' => 'blog#index',  :as => "home"
   root :to => 'blog#index'
