@@ -14,7 +14,7 @@ describe "Blogs" do
     end
 
   end
-  describe "Search /blog", :js => true do
+  describe "Search /blog" do
     it "should be able to search into the blog database" do
       set_locale "en"
       post = FactoryGirl.create(:post)
