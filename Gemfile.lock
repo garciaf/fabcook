@@ -271,6 +271,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  pry
   rails (= 3.2.13)
   rails-erd
   redcarpet
