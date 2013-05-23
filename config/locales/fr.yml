@@ -5,4 +5,6 @@ fr:
   title: "Tout le monde peut cuisiner"
   subtitle: "même moi ..."
   search:
+    title: "Resultas de recherche"
+    for: "pour : "
     no_result: "pas de résultat navré"
