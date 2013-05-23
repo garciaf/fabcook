@@ -75,5 +75,6 @@ end
 
 # gem for dev
 group :development do
+  gem "better_errors"
   gem 'rails-erd'
 end
