@@ -15,6 +15,13 @@ class ApplicationController < ActionController::Base
     @post = Post.find(params[:id])
   end
 
+  def is_admin
+    unless user_signed_in? and current_user.is_admin
+      flash[:error] = "Access denied."
+      redirect_to root_url
+    end
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "Access denied."
     redirect_to root_url
