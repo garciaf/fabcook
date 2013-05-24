@@ -1,12 +1,14 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <div class="">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </div>
+  <% unless user_signed_in? %>
+    <div class="">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="">
+      <%= f.label :commenter %><br />
+      <%= f.text_field :commenter %>
+    </div>
+  <% end %>
   <div class="">
     <%= f.label :body %><br />
     <%= f.text_area :body, :size => "60x12"%>
