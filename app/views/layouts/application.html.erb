@@ -43,11 +43,13 @@
             </li>
             </ul>
           </li> 
-        <% if user_signed_in? %>
+        <% if can? :manage, :all %>
           <li><%= link_to "admin", posts_path %></li>
-          <li><%= link_to "logout", destroy_user_session_path, :method => :delete  %></li>
-        <% else %>
+        <% end %>
+        <% unless user_signed_in? %>
           <li><%= link_to "login", new_user_session_path %></li>
+        <% else%>
+          <li><%= link_to "logout", destroy_user_session_path, :method => :delete  %></li>
         <% end %>
         </ul>
       </div>
