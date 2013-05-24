@@ -1,0 +1,1 @@
+MAIL_CONFIG = YAML.load_file("#{Rails.root}/config/mail.yml")[Rails.env].symbolize_keys rescue {}

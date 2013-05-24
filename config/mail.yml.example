@@ -1,0 +1,19 @@
+development:
+  address: smtp.gmail.com
+  port: 587
+  domain: baci.lindsaar.net
+  user_name: YOUR_USERNAME
+  password: YOUR_PASSWORD
+  authentication: plain
+  enable_starttls_auto: true
+  from: me@example.com
+
+production:
+  address: smtp.gmail.com
+  port: 587
+  domain: baci.lindsaar.net
+  user_name: YOUR_USERNAME
+  password: YOUR_PASSWORD
+  authentication: plain
+  enable_starttls_auto: true
+  from: me@example.com
