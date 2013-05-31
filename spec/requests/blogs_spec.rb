@@ -14,11 +14,7 @@ describe "Blogs" do
     end
 
   end
-  describe "failure" do 
-    it "will fail" do 
-      expect(false).to eq(true)
-    end
-  end
+
   describe "Search /blog" do
     it "should be able to search into the blog database" do
       set_locale "en"
