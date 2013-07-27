@@ -48,6 +48,7 @@ gem "cancan"
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'capistrano-rails','~> 0.0.7'
 
 # To handle Tag
 gem 'acts-as-taggable-on'
@@ -68,6 +69,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'capistrano-unicorn'
 end
 
 group :test do
