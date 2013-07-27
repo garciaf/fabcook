@@ -5,7 +5,7 @@ set :repository,  "set your repository location here"
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :repository, "git@account.beanstalkapp.com:/repository.git"
+set :repository, "git@github.com:garciaf/fabcook.git"
 set :scm_passphrase, "vagrant"
 
 set :ssh_options, { :forward_agent => true }
