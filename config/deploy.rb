@@ -8,6 +8,8 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 set :repository, "git@github.com:garciaf/fabcook.git"
 set :scm_passphrase, "vagrant"
 
+set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+
 set :ssh_options, { :forward_agent => true }
 
 role :web, "192.168.33.10"                          # Your HTTP server, Apache/etc
@@ -22,7 +24,12 @@ set :user, "vagrant"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
-
+namespace :deploy do
+  task :create_symlinks do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+  after 'deploy:update_code', 'deploy:create_symlinks'
+end
 # If you are using Passenger mod_rails uncomment this:
 # namespace :deploy do
 #   task :start do ; end
